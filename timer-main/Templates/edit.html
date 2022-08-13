@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+{% block body %}
+<!--
+==================================================
+Slider Section Start
+================================================== -->
+<section id="hero-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="block wow fadeInUp" data-wow-delay=".3s">
+
+          <!-- Slider -->
+          <section class="cd-intro">
+            <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s">
+              <span>HI, MY NAME IS Waleed &amp; I AM A</span><br>
+              <span class="cd-words-wrapper">
+                <b class="is-visible">DESIGNER</b>
+                <b>DEVELOPER</b>
+                <b>IT Engineer</b>
+              </span>
+            </h1>
+          </section> <!-- cd-intro -->
+          <!-- /.slider -->
+          <h2 class="wow fadeInUp animated" data-wow-delay=".6s">
+            Welcome To Admin Panel
+          </h2>
+          <a class="btn-lines dark light wow fadeInUp animated btn btn-default btn-green hvr-bounce-to-right"
+            data-wow-delay=".9s" href="/blog-fullwidth">Explore Blog</a></br>
+          <a class="btn-lines dark light wow fadeInUp animated btn btn-default btn-green hvr-bounce-to-right"
+            data-wow-delay=".9s" href="/logout">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/#main-slider-->
+<section>
+        <form id="contact-form" method="post" action="/edit/{{sno}}" role="form">
+
+                  <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s">
+                    <input type="text" placeholder="Title Here" class="form-control" name="title" value="{{post.title}}" id="name">
+                  </div>
+
+                  <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
+                    <input type="text" placeholder="Your role on website" class="form-control" value="{{post.role}}" name="role" id="email">
+                  </div>
+
+                  <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
+                    <input type="text" placeholder="Post Slug" class="form-control" name="slug" value="{{post.slug}}" id="subject">
+                  </div>
+
+                  <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
+                    <textarea rows="6" placeholder="content" class="form-control" name="content" id="message">{{post.content}}</textarea>
+                  </div>
+
+                  <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
+                    <input type="text" placeholder="Image filename" class="form-control" name="img_file" value="{{post.img_file}}" id="subject">
+                  </div>
+                  <div id="success" class="success">
+                    Thank you. The Mailman is on His Way :
+                  </div>
+
+                  <div id="error" class="error">
+                    Sorry, don't know what happened. Try later :
+                  </div>
+
+                  <div id="submit" class="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.4s">
+                    <button type="submit" id="contact-submit" class="btn btn-default btn-send hvr-bounce-to-right"
+                      value="Send Message">Send Message</button>
+                  </div>
+        </form>
+
+</section>    
+{% endblock %}

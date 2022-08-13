@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% block body %}
+<!--
+==================================================
+Slider Section Start
+================================================== -->
+<section id="hero-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="block wow fadeInUp" data-wow-delay=".3s">
+
+          <!-- Slider -->
+          <section class="cd-intro">
+            <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s">
+              <span>HI, MY NAME IS Waleed &amp; I AM A</span><br>
+              <span class="cd-words-wrapper">
+                <b class="is-visible">DESIGNER</b>
+                <b>DEVELOPER</b>
+                <b>IT Engineer</b>
+              </span>
+            </h1>
+          </section> <!-- cd-intro -->
+          <!-- /.slider -->
+          <h2 class="wow fadeInUp animated" data-wow-delay=".6s">
+            Welcome To Admin Panel
+          </h2>
+          <a class="btn-lines dark light wow fadeInUp animated btn btn-default btn-green hvr-bounce-to-right"
+            data-wow-delay=".9s" href="/blog-fullwidth">Explore Blog</a></br>
+          <form action="/uploader" method="post" enctype="multipart/form-data">
+            <input type="file" class="btn-lines dark light wow fadeInUp animated btn btn-default btn-green hvr-bounce-to-right" name="file1"></input>
+            <button type="submit" class="btn-lines dark light wow fadeInUp animated btn btn-default btn-green hvr-bounce-to-right">Upload</button>
+          </form>
+          <a class="btn-lines dark light wow fadeInUp animated btn btn-default btn-green hvr-bounce-to-right"
+            data-wow-delay=".9s" href="/logout">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/#main-slider-->
+<section class="container" id="contact-section">
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Slug</th>
+                <th scope="col">Image</th>
+                <th scope="col">Date</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in posts %}
+                <tr>
+                <td>{{post.sno}}</td>
+                <td>{{post.title}}</td>
+                <td>{{post.slug}}</td>
+                <td>{{post.img_file}}</td>
+                <td>{{post.date}}</td>
+                <td><a class="btn-lines dark light wow fadeInUp animated btn btn-default btn-green hvr-bounce-to-right"
+                data-wow-delay=".9s" href="/edit/{{post.sno}}" target="_blank">Edit</a></td>
+                <td><a class="btn-lines dark light wow fadeInUp animated btn btn-default btn-green hvr-bounce-to-right"
+                data-wow-delay=".9s" href="#" target="_blank">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+</section>    
+{% endblock %}

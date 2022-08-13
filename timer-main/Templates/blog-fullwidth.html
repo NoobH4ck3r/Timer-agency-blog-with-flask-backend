@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% block body %}
+        <!-- 
+        ================================================== 
+            Global Page Section Start
+        ================================================== -->
+        <section class="global-page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block">
+                            <h2>Full width blog</h2>
+                            <ol class="breadcrumb list-inline text-center">
+                                <li class="list-inline-item">
+                                    <a href="/">
+                                        <i class="ion-ios-home"></i>
+                                        Home  &nbsp; &nbsp;/
+                                    </a>
+                                </li>
+                                <li class="active list-inline-item">Blog</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+<!--=====================================
+=            Full Width Blog            =
+======================================-->
+<section id="blog-full-width">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+
+        {% for post in posts %}
+        <article class="wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">
+          <div class="blog-post-image">
+            <a href="/single-post/{{post.slug}}"><img class="img-fluid" src="{{ url_for('static', filename=post.img_file) }}" alt="" /></a>
+          </div>
+          <div class="blog-content">
+            <h2 class="blogpost-title">
+              <a href="/single-post/{{post.slug}}">{{post.title}}</a>
+            </h2>
+            <div class="blog-meta">
+              <span>{{post.date}}</span>
+              <span>by <a href="">{{post.role}}</a></span>
+              <span><a href="">business</a>,<a href="">people</a></span>
+            </div>
+            <p>{{post.content}}
+            </p>
+            <a href="/single-post/{{post.slug}}" class="btn btn-dafault btn-details hvr-bounce-to-right">Continue Reading</a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

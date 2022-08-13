@@ -1,0 +1,15 @@
+{
+	"params":{
+		"site_name":"",
+		"about_text":"My Name is Waleed and I am a Developer",
+		"service_text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis porro recusandae non quibusdam iure adipisci.",
+		"username":"waleed",
+		"password":"admin",
+		"gmail_username":"waleedhsn569@gmail.com",
+		"gmail_pass":"qwnebmkijhdbonsl",
+		"fb_link":"https://facebook.com",
+		"twitter_link":"https://twitter.com",
+		"linkedin_link":"https://linkedin.com",
+		"gmail_link":"https://gmail.com"
+	}
+}

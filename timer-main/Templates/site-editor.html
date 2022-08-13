@@ -1,0 +1,92 @@
+{% extends 'layout.html' %}
+{% block body %}
+<!--
+==================================================
+Slider Section Start
+================================================== -->
+<section id="hero-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="block wow fadeInUp" data-wow-delay=".3s">
+
+          <!-- Slider -->
+          <section class="cd-intro">
+            <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s">
+              <span>HI, MY NAME IS Waleed &amp; I AM A</span><br>
+              <span class="cd-words-wrapper">
+                <b class="is-visible">DESIGNER</b>
+                <b>DEVELOPER</b>
+                <b>IT Engineer</b>
+              </span>
+            </h1>
+          </section> <!-- cd-intro -->
+          <!-- /.slider -->
+          <h2 class="wow fadeInUp animated" data-wow-delay=".6s">
+            Welcome To Admin Panel
+          </h2>
+          <a class="btn-lines dark light wow fadeInUp animated btn btn-default btn-green hvr-bounce-to-right"
+            data-wow-delay=".9s" href="/blog-fullwidth">Explore Blog</a></br>
+          <form action="/uploader" method="post" enctype="multipart/form-data">
+            <input type="file" class="btn-lines dark light wow fadeInUp animated btn btn-default btn-green hvr-bounce-to-right" name="file1"></input>
+            <button type="submit" class="btn-lines dark light wow fadeInUp animated btn btn-default btn-green hvr-bounce-to-right">Upload</button>
+          </form>
+          <a class="btn-lines dark light wow fadeInUp animated btn btn-default btn-green hvr-bounce-to-right"
+            data-wow-delay=".9s" href="/logout">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/#main-slider-->
+<section class="container" id="contact-section">
+        <div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+            <h3>Advanced Settings for Website</h3>
+            <div class="card">
+                <form class="form-card" method='post' action='/site-editor'>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Name of Website<span class="text-danger"> *</span></label> <input type="text" id="fname" name="site-title" placeholder="Web site name" onblur="validate(1)"> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Home Background<span class="text-danger"> *</span></label> <input type="text" id="email" name="home-bg" placeholder="Home page image" value={{parameters['home_bg']}} onblur="validate(3)"> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">About Description<span class="text-danger"> *</span></label> <textarea type="text" id="mob" name="about-text" placeholder="About Text" onblur="validate(4)">{{parameters['about_text']}}</textarea> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Service Description<span class="text-danger"> *</span></label> <textarea type="text" id="job" name="service-text" placeholder="service Text" onblur="validate(5)">{{parameters['service_text']}}</textarea> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Username for Dashboard<span class="text-danger"> *</span></label> <input type="text" id="ans" name="username" placeholder="Username" value={{parameters['username']}} onblur="validate(6)"> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Password for Dashboard<span class="text-danger"> *</span></label> <input type="password" id="ans" name="password" placeholder="Password" value={{parameters['password']}} onblur="validate(6)"> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Gmail username for receiving contact mails<span class="text-danger"> *</span></label> <input type="email" id="ans" name="gmail-user" placeholder="Gmail username for contact mails" value={{parameters['gmail_username']}} onblur="validate(6)"> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Password for Gmail<span class="text-danger"> *</span></label> <input type="password" id="ans" name="gmail-pass" placeholder="Password of gmail id for contact mails" value={{parameters['gmail_pass']}} onblur="validate(6)"> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Facebook Icon Link<span class="text-danger"> *</span></label> <input type="url" id="ans" name="fb-link" placeholder="Facebook Link here" value={{parameters['fb_link']}} onblur="validate(6)"> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Twitter Icon Link<span class="text-danger"> *</span></label> <input type="url" id="ans" name="twitter-link" placeholder="Twitter Link here" value={{parameters['twitter_link']}} onblur="validate(6)"> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Linked In Icon Link<span class="text-danger"> *</span></label> <input type="url" id="ans" name="linkedin-link" placeholder="Linked In link here" value={{parameters['linkedin_link']}} onblur="validate(6)"> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Gmail Icon Link<span class="text-danger"> *</span></label> <input type="" id="ans" name="gmail-link" placeholder="Gmail link here" value={{parameters['gmail_link']}} onblur="validate(6)"> </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="form-group col-sm-6"> <button type="submit" class="btn-lines dark light wow fadeInUp animated btn btn-default btn-green hvr-bounce-to-right">Save</button> </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</section>    
+{% endblock %}

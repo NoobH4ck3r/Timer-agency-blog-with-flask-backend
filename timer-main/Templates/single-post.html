@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block body %}
+<!--
+==================================================
+Global Page Section Start
+================================================== -->
+<section class="global-page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h2>{{post.title}}</h2>
+          <div class="portfolio-meta">
+            <span>{{post.date}}</span>|
+            <span> by: {{post.role}}</span>|
+            <span> Tags: <a href="">business</a>,<a href="">people</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/#Page header-->
+
+
+<section class="single-post">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="post-img">
+          <img class="img-fluid" alt="" src="{{ url_for('static', filename=post.img_file) }}">
+        </div>
+        <div class="post-content">
+          <p>
+            {{post.content}}
+          </p>
+        </div>
+  </div>
+</section>
+
+
+{% endblock %}
