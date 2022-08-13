@@ -1,1 +1,0 @@
-sno = db.column(db.Integer, primary_key=True)
